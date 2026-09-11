@@ -1,6 +1,8 @@
 /**
  * Learn Section Controller
  * Simple reference viewer for Hindi characters, matras, and words.
+ * Formats examples with Bengali pronunciation, e.g. फ़िल्म (ফিল্ম).
+ * No emojis or English translations of Bengali text.
  */
 
 import { Data } from './data.js';
@@ -129,6 +131,11 @@ export const Learn = {
     const avro = Array.isArray(item.avro) ? item.avro.join(', ') : (item.avro || '');
     const groupName = item.groupName || '';
 
+    // Hindi shobde proyog formatting: फ़िल्म (ফিল্ম) — সিনেমা
+    const exHindi = item.exampleHindi || '';
+    const exPhonetic = item.examplePhonetic ? `(${item.examplePhonetic})` : '';
+    const exMeaning = item.exampleBangla || '';
+
     cardEl.innerHTML = `
       <div class="card-header-meta">
         <span class="badge-group">${groupName || 'বর্ণ'}</span>
@@ -139,7 +146,7 @@ export const Learn = {
         <div class="hero-character-wrapper">
           <span class="devanagari-hero">${dev}</span>
           <button class="btn-audio-hero" id="btnPlayCharAudio" title="উচ্চারণ শুনুন">
-            🔊
+            শুনুন
           </button>
         </div>
 
@@ -149,7 +156,7 @@ export const Learn = {
             <span class="bridge-value bengali-text">${ben}</span>
           </div>
           <div class="bridge-item">
-            <span class="bridge-label">Avro / Roman</span>
+            <span class="bridge-label">Avro</span>
             <span class="bridge-value avro-text">${avro}</span>
           </div>
         </div>
@@ -160,18 +167,21 @@ export const Learn = {
         <p>${item.soundTip}</p>
       </div>` : ''}
 
-      ${item.exampleHindi ? `
+      ${exHindi ? `
       <div class="card-example-section">
         <div class="example-header">
           <span>হিন্দি শব্দে প্রয়োগ</span>
-          <button class="btn-audio-small" id="btnPlayWordAudio" style="background:none;border:none;cursor:pointer;color:#1d78b9;font-weight:600;">
-            🔊 শুনুন
+          <button class="btn-audio-small" id="btnPlayWordAudio">
+            শুনুন
           </button>
         </div>
         <div class="example-card">
-          <div class="ex-hindi">${item.exampleHindi}</div>
-          <div class="ex-details">
-            <strong>${item.exampleBangla}</strong> <span>(${item.exampleMeaning})</span>
+          <div class="ex-hindi-wrap">
+            <span class="ex-hindi-word">${exHindi}</span>
+            <span class="ex-phonetic-word">${exPhonetic}</span>
+          </div>
+          <div class="ex-meaning-wrap">
+            <span class="ex-meaning-text">— ${exMeaning}</span>
           </div>
         </div>
       </div>
@@ -179,13 +189,13 @@ export const Learn = {
 
       <div class="card-navigation-bar">
         <button class="btn-nav" id="btnPrevCard" ${this.currentIndex === 0 ? 'disabled' : ''}>
-          ← পূর্ববর্তী
+          পূর্ববর্তী
         </button>
         <button class="btn-quick-quiz" id="btnQuickPracticeThis">
-          🎯 এই বর্ণগুলো কুইজে প্র্যাকটিস করুন
+          এই বর্ণগুলো কুইজে প্র্যাকটিস করুন
         </button>
         <button class="btn-nav" id="btnNextCard" ${this.currentIndex === this.currentList.length - 1 ? 'disabled' : ''}>
-          পরবর্তী →
+          পরবর্তী
         </button>
       </div>
     `;
@@ -195,7 +205,7 @@ export const Learn = {
     });
 
     cardEl.querySelector('#btnPlayWordAudio')?.addEventListener('click', () => {
-      Speech.speak(item.audioWord || item.exampleHindi);
+      Speech.speak(item.audioWord || exHindi);
     });
 
     cardEl.querySelector('#btnPrevCard')?.addEventListener('click', () => this.prevCard());
@@ -272,7 +282,7 @@ export const Learn = {
             <div class="matra-card" data-speak="${combinedHindi}">
               <div class="matra-symbols">
                 <span class="matra-sign">${m.symbol}</span>
-                <span>↔</span>
+                <span>=</span>
                 <span class="matra-bengali-kar">${m.bengaliKar}</span>
               </div>
               <div class="matra-combined">
@@ -286,7 +296,7 @@ export const Learn = {
       </div>
 
       <div class="special-ra-box">
-        <h4>⚡ ${matraData.specialRuleRa.title}</h4>
+        <h4>ব্যতিক্রম: 'র' (र)-এর সাথে উ/ঊ-কার</h4>
         <p style="font-size:0.9rem;color:var(--text-muted);">${matraData.specialRuleRa.explanation}</p>
         <div class="special-ra-examples">
           ${matraData.specialRuleRa.examples.map(ex => `
@@ -317,16 +327,18 @@ export const Learn = {
       <div class="words-grid">
         ${words.map(w => `
           <div class="word-card" data-word="${w.hindi}">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <span class="word-hindi">${w.hindi}</span>
-              <button style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔊</button>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+              <div>
+                <span class="word-hindi">${w.hindi}</span>
+                <span class="word-phonetic">(${w.bengaliPhonetic})</span>
+              </div>
+              <button class="btn-word-listen" style="background:var(--bg-elevated);border:1px solid var(--border-subtle);padding:0.25rem 0.65rem;border-radius:4px;cursor:pointer;font-size:0.8rem;">শুনুন</button>
             </div>
             <div class="word-breakdown">
               <code>${w.breakdown}</code>
             </div>
             <div class="word-details">
-              <div><strong>${w.bengaliPhonetic}</strong> (${w.avro})</div>
-              <div>অর্থ: ${w.bengali} (${w.english})</div>
+              <div>অর্থ: ${w.bengali}</div>
             </div>
           </div>
         `).join('')}

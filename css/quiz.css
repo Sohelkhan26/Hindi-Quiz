@@ -1,21 +1,22 @@
 /* ==========================================================================
    TOFUGU-STYLE KANA QUIZ LAYOUT FOR HINDI ALPHABET
    Full-screen responsive card grid with Avro/Bangla inputs
+   No emojis, clean minimalist typography
    ========================================================================== */
 
 /* Intro Box & Instructions */
 .tofugu-intro-box {
-  max-width: 800px;
-  margin: 0 auto 1.75rem;
+  max-width: 860px;
+  margin: 0 auto 1.5rem;
   text-align: center;
 }
 
 .tofugu-title {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   font-weight: 800;
   color: #1d78b9;
   letter-spacing: -0.01em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 html.dark .tofugu-title {
@@ -26,16 +27,16 @@ html.dark .tofugu-title {
   list-style: none;
   display: inline-block;
   text-align: left;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
   padding: 0;
   color: var(--text-muted);
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .tofugu-instructions li {
   position: relative;
-  padding-left: 1.4rem;
+  padding-left: 1.25rem;
   margin-bottom: 0.35rem;
 }
 
@@ -45,7 +46,7 @@ html.dark .tofugu-title {
   left: 0;
   top: 0;
   color: #1d78b9;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1;
 }
 
@@ -68,11 +69,11 @@ html.dark .tofugu-instructions li::before {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.85rem;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 0.75rem 1.25rem;
+  padding: 0.85rem 1.25rem;
   margin-bottom: 2rem;
   box-shadow: var(--shadow-sm);
 }
@@ -137,6 +138,21 @@ html.dark .tracker-val {
   color: #38bdf8;
 }
 
+/* Mode Hint Text placed right below mode toggle */
+.mode-hint-bar {
+  width: 100%;
+  text-align: left;
+  padding-top: 0.35rem;
+  border-top: 1px dashed var(--border-subtle);
+  margin-top: 0.35rem;
+}
+
+.mode-hint-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
 /* ==========================================================================
    Full-Screen Responsive Grid (Like Tofugu Kana Quiz)
    8 Columns on Wide Desktop
@@ -180,6 +196,7 @@ html.dark .tracker-val {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* Completely clean text input inside card with NO placeholder */
 .card-input {
   width: 100%;
   max-width: 130px;
@@ -197,12 +214,6 @@ html.dark .tracker-val {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card-input::placeholder {
-  color: #94a3b8;
-  font-size: 0.78rem;
-  font-weight: 500;
-}
-
 .card-input:focus {
   border-color: #f59e0b;
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.4);
@@ -215,7 +226,7 @@ html.dark .tracker-val {
 }
 
 .card-input.solved-input {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   color: #27ae60;
   font-weight: 800;
   cursor: default;
@@ -331,7 +342,7 @@ html.dark .tracker-val {
 }
 
 .results-modal-card h2 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   margin-bottom: 1.25rem;
   color: var(--text-main);
 }
@@ -466,9 +477,7 @@ html.dark .stat-num {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* ==========================================================================
-   Responsive Grid Breakpoints
-   ========================================================================== */
+/* Responsive Grid Breakpoints */
 @media (max-width: 1300px) {
   .kana-quiz-grid {
     grid-template-columns: repeat(6, 1fr);
@@ -480,7 +489,7 @@ html.dark .stat-num {
     grid-template-columns: repeat(4, 1fr);
   }
   .tofugu-title {
-    font-size: 1.85rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -490,7 +499,7 @@ html.dark .stat-num {
     gap: 0.75rem;
   }
   .kana-card {
-    min-height: 160px;
+    min-height: 155px;
     padding: 1.25rem 0.5rem 1rem;
   }
   .kana-glyph {

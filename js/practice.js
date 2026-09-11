@@ -1,9 +1,8 @@
 /**
  * Full-Screen Tofugu-Style Practice Engine
  * Renders all characters across the screen in responsive cards.
- * Accepts Avro and/or Bangla input. Does NOT reveal answers on wrong attempts.
- * Right answers & explanations are revealed only after clicking "Finish Quiz".
- * Tracks characters with 5 or more wrong attempts in localStorage.
+ * No placeholders in card inputs; mode hint displayed under input mode toggle.
+ * No emojis across alerts and text.
  */
 
 import { Data } from './data.js';
@@ -16,7 +15,7 @@ export const Practice = {
   cards: [],
   solvedCount: 0,
   isFinished: false,
-  wrongAttemptMap: {}, // { [charId]: number }
+  wrongAttemptMap: {},
 
   init() {
     this.bindControls();
@@ -40,7 +39,7 @@ export const Practice = {
         document.querySelectorAll('.mode-toggle-btn').forEach(b => b.classList.remove('active'));
         e.currentTarget.classList.add('active');
         this.inputMode = e.currentTarget.dataset.mode;
-        this.updateInputPlaceholders();
+        this.updateModeHint();
       });
     });
 
@@ -69,7 +68,7 @@ export const Practice = {
   filterToWeakCharacters() {
     const weakList = Storage.getWeakCharacters();
     if (weakList.length === 0) {
-      alert('আপনার কোনো ৫+ বার ভুল হওয়া বর্ণ নেই!');
+      alert('আপনার কোনো ৫ বা তার বেশি বার ভুল হওয়া বর্ণ নেই।');
       return;
     }
 
@@ -105,7 +104,6 @@ export const Practice = {
         });
         list = Data.getAll();
       } else {
-        // Map stored weak IDs back to full character data
         list = weakStored.map(w => Data.getById(w.id) || w);
       }
     } else {
@@ -121,23 +119,26 @@ export const Practice = {
 
     this.renderBoard();
     this.updateStats();
+    this.updateModeHint();
 
-    // Auto-focus the first input
+    // Auto-focus the first card input
     setTimeout(() => {
       const firstInput = document.querySelector('.card-input:not([disabled])');
       if (firstInput) firstInput.focus();
     }, 100);
   },
 
-  updateInputPlaceholders() {
-    const inputs = document.querySelectorAll('.card-input');
-    let ph = 'e.g. ka / ক';
-    if (this.inputMode === 'avro') ph = 'e.g. ka';
-    if (this.inputMode === 'bangla') ph = 'যেমন: ক';
+  updateModeHint() {
+    const hintEl = document.getElementById('modeHintText');
+    if (!hintEl) return;
 
-    inputs.forEach(inp => {
-      if (!inp.disabled) inp.placeholder = ph;
-    });
+    if (this.inputMode === 'avro') {
+      hintEl.textContent = 'ইনপুট উদাহরণ: ka, a, gha ইত্যাদি ইংরেজি অক্ষরে টাইপ করে Enter চাপুন।';
+    } else if (this.inputMode === 'bangla') {
+      hintEl.textContent = 'ইনপুট উদাহরণ: ক, আ, খ ইত্যাদি বাংলা অক্ষরে টাইপ করে Enter চাপুন।';
+    } else {
+      hintEl.textContent = 'ইনপুট উদাহরণ: ka অথবা ক টাইপ করে Enter চাপুন (উভয়ই গৃহীত)।';
+    }
   },
 
   renderBoard() {
@@ -149,10 +150,7 @@ export const Practice = {
       return;
     }
 
-    let placeholder = 'e.g. ka / ক';
-    if (this.inputMode === 'avro') placeholder = 'e.g. ka';
-    if (this.inputMode === 'bangla') placeholder = 'যেমন: ক';
-
+    // No placeholder inside card inputs as requested
     grid.innerHTML = this.cards.map((card, idx) => {
       const dev = card.devanagari || card.hindi || '';
       return `
@@ -161,7 +159,6 @@ export const Practice = {
           <input type="text" 
                  class="card-input" 
                  data-idx="${idx}"
-                 placeholder="${placeholder}"
                  autocomplete="off" 
                  autocorrect="off" 
                  autocapitalize="off" 
@@ -171,7 +168,6 @@ export const Practice = {
       `;
     }).join('');
 
-    // Bind input and key events
     grid.querySelectorAll('.card-input').forEach(input => {
       input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
@@ -182,7 +178,6 @@ export const Practice = {
       });
     });
 
-    // Close modal if open
     document.getElementById('quizResultsModal')?.classList.add('hidden');
   },
 
@@ -198,7 +193,6 @@ export const Practice = {
     const normalizedVal = value.trim().toLowerCase();
     if (!normalizedVal) return;
 
-    // Check validity based on active input mode
     let isCorrect = false;
     const validAvros = Array.isArray(card.avro) 
       ? card.avro.map(a => a.toLowerCase()) 
@@ -211,7 +205,6 @@ export const Practice = {
     } else if (this.inputMode === 'bangla') {
       isCorrect = (normalizedVal === validBangla);
     } else {
-      // Both accepted
       isCorrect = validAvros.includes(normalizedVal) || (normalizedVal === validBangla);
     }
 
@@ -227,25 +220,19 @@ export const Practice = {
       Speech.playCorrect();
       this.updateStats();
 
-      // If this card previously had 5+ errors and user got it right, record it
       Storage.recordCorrect(card);
 
-      // Smoothly focus NEXT unsolved card
       this.focusNextUnsolved(idx);
 
-      // Check if all cards are solved
       if (this.solvedCount === this.cards.length) {
         setTimeout(() => this.finishQuiz(), 400);
       }
     } else {
-      // WRONG ATTEMPT:
-      // Do NOT reveal the right answer!
-      // Shake the card, increment wrong count, keep input for retrying
+      // Wrong attempt: DO NOT reveal answer!
       card.attempts += 1;
       const charId = card.id || `char_${idx}`;
       this.wrongAttemptMap[charId] = (this.wrongAttemptMap[charId] || 0) + 1;
 
-      // Check if reached 5 or more wrong attempts
       if (this.wrongAttemptMap[charId] >= 5) {
         Storage.recordWrong(card);
       }
@@ -257,7 +244,6 @@ export const Practice = {
         cardEl.classList.remove('incorrect-shake');
       }, 500);
 
-      // Clear input and keep focus so user can try as many times as they want
       inputEl.value = '';
       inputEl.focus();
     }
@@ -298,7 +284,7 @@ export const Practice = {
     if (modalScore) modalScore.textContent = `${solved} / ${total}`;
     if (modalPercentage) modalPercentage.textContent = `${percent}%`;
 
-    // Reveal right answers on the cards that were NOT solved!
+    // Reveal right answers on unsolved cards
     this.cards.forEach((card, idx) => {
       const cardEl = document.getElementById(`card-${idx}`);
       const solEl = document.getElementById(`sol-${idx}`);
@@ -322,12 +308,11 @@ export const Practice = {
       }
     });
 
-    // Check for characters with 5+ wrong attempts in storage
     const weakList = Storage.getWeakCharacters();
     if (weakSection) {
       if (weakList.length > 0) {
         weakSection.innerHTML = `
-          <div class="weak-list-header">⚠️ ৫ বা তার বেশি বার ভুল হওয়া বর্ণসমূহ:</div>
+          <div class="weak-list-header">৫ বা তার বেশি বার ভুল হওয়া বর্ণসমূহ:</div>
           <div class="weak-badges-row">
             ${weakList.map(w => `
               <span class="weak-badge" title="${w.soundTip || ''}">
@@ -338,7 +323,7 @@ export const Practice = {
         `;
         document.getElementById('btnPracticeOnlyWeak')?.classList.remove('hidden');
       } else {
-        weakSection.innerHTML = `<p class="no-weak-notice">🎉 দারুণ! কোনো বর্ণেই ৫ বার বা তার বেশি ভুল হয়নি।</p>`;
+        weakSection.innerHTML = `<p class="no-weak-notice">কোনো বর্ণেই ৫ বার বা তার বেশি ভুল হয়নি।</p>`;
         document.getElementById('btnPracticeOnlyWeak')?.classList.add('hidden');
       }
     }

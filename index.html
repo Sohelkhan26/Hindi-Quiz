@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hindi Alphabet Quiz | বাংলা মাধ্যমে হিন্দি বর্ণমালা কুইজ</title>
-  <meta name="description" content="Tofugu-inspired Hindi alphabet practice with Avro and Bangla input. Free, fast, and minimal.">
+  <title>হিন্দি বর্ণমালা কুইজ | Hindi Alphabet Quiz</title>
+  <meta name="description" content="বাংলা ও Avro ইনপুটসহ হিন্দি বর্ণমালা কুইজ ও শেখার প্ল্যাটফর্ম।">
   <meta name="theme-color" content="#1d78b9">
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
   
@@ -13,31 +13,30 @@
 </head>
 <body>
 
-  <!-- Minimal Header -->
+  <!-- Header -->
   <header class="site-header">
     <div class="header-container">
       <div class="brand-link" data-nav-target="practice">
         <span class="brand-badge">क</span>
-        <span class="brand-title">Hindi Alphabet Quiz</span>
+        <span class="brand-title">হিন্দি বর্ণমালা কুইজ</span>
       </div>
 
       <nav class="main-nav" aria-label="Main Navigation">
         <button class="nav-link active" data-nav-target="practice">
-          <span>🎯</span> কুইজ (Quiz)
+          কুইজ
         </button>
         <button class="nav-link" data-nav-target="learn">
-          <span>📖</span> শিখুন (Learn)
+          শিখুন
         </button>
       </nav>
 
       <div class="header-actions">
         <div class="visitor-badge" id="visitorCountBadge" title="Unique Visitors">
-          <span class="visitor-icon">👥</span>
           <span class="visitor-label">Visitors:</span>
           <span class="visitor-num">...</span>
         </div>
         <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
-          ☀️
+          থিম
         </button>
       </div>
     </div>
@@ -47,49 +46,53 @@
   <main class="app-container">
 
     <!-- ====================================================================
-         SECTION 1: PRACTICE / QUIZ (TOFUGU FULL SCREEN GRID)
+         SECTION 1: PRACTICE / QUIZ (FULL SCREEN GRID)
          ==================================================================== -->
     <section id="view-practice" class="view-section">
       
-      <!-- Tofugu-Style Header & Instructions -->
       <div class="tofugu-intro-box">
         <h1 class="tofugu-title">Type Avro or Bangla for the Hindi You Know</h1>
         <ul class="tofugu-instructions">
           <li>Type your answer in Avro (e.g. <code>ka</code>, <code>a</code>) or Bangla (<code>ক</code>, <code>অ</code>) in the card's text field</li>
           <li>Press <strong>ENTER</strong> to submit</li>
           <li>Repeat for as many cards as you can</li>
-          <li>You can try as many times as you want (wrong answers won't reveal the solution right away)</li>
+          <li>You can try as many times as you want (wrong answers will not reveal the solution right away)</li>
           <li>When you're done, click the <strong>"Finish Quiz"</strong> button at the bottom to see answers and explanations</li>
         </ul>
 
-        <!-- Control Bar: Category Filters & Input Mode Toggle -->
+        <!-- Control Bar -->
         <div class="quiz-controls-bar">
           <div class="filter-group">
             <span class="ctrl-label">বিভাগ:</span>
-            <button class="quiz-filter-tab active" data-cat="all">সব বর্ণ (All)</button>
-            <button class="quiz-filter-tab" data-cat="vowels">স্বরবর্ণ (Vowels)</button>
-            <button class="quiz-filter-tab" data-cat="consonants">ব্যঞ্জনবর্ণ (Consonants)</button>
-            <button class="quiz-filter-tab" data-cat="matras">মাত্রাসমূহ (Matras)</button>
-            <button class="quiz-filter-tab" data-cat="nukta">নুক্তা (Nukta)</button>
-            <button class="quiz-filter-tab" data-cat="conjuncts">যুক্তাক্ষর (Conjuncts)</button>
-            <button class="quiz-filter-tab" data-cat="weak">⚠️ ৫+ বার ভুল (Weak)</button>
+            <button class="quiz-filter-tab active" data-cat="all">সব বর্ণ</button>
+            <button class="quiz-filter-tab" data-cat="vowels">স্বরবর্ণ</button>
+            <button class="quiz-filter-tab" data-cat="consonants">ব্যঞ্জনবর্ণ</button>
+            <button class="quiz-filter-tab" data-cat="matras">মাত্রাসমূহ</button>
+            <button class="quiz-filter-tab" data-cat="nukta">নুক্তা</button>
+            <button class="quiz-filter-tab" data-cat="conjuncts">যুক্তাক্ষর</button>
+            <button class="quiz-filter-tab" data-cat="weak">৫+ বার ভুল</button>
           </div>
 
           <div class="mode-toggle-group">
             <span class="ctrl-label">ইনপুট মোড:</span>
-            <button class="mode-toggle-btn active" data-mode="both">Avro + বাংলা (উভয়ই)</button>
-            <button class="mode-toggle-btn" data-mode="avro">শুধুমাত্র Avro (ka)</button>
-            <button class="mode-toggle-btn" data-mode="bangla">শুধুমাত্র বাংলা (ক)</button>
+            <button class="mode-toggle-btn active" data-mode="both">Avro + বাংলা</button>
+            <button class="mode-toggle-btn" data-mode="avro">শুধুমাত্র Avro</button>
+            <button class="mode-toggle-btn" data-mode="bangla">শুধুমাত্র বাংলা</button>
           </div>
 
           <div class="score-tracker-pill">
-            <span class="tracker-label">Score:</span>
+            <span class="tracker-label">স্কোর:</span>
             <span class="tracker-val" id="quizScoreTracker">0 / 0</span>
+          </div>
+
+          <!-- Mode Hint Text directly under input mode -->
+          <div class="mode-hint-bar">
+            <span class="mode-hint-text" id="modeHintText">ইনপুট উদাহরণ: ka অথবা ক টাইপ করে Enter চাপুন (উভয়ই গৃহীত)।</span>
           </div>
         </div>
       </div>
 
-      <!-- Full-Screen Tofugu Responsive Grid -->
+      <!-- Full-Screen Responsive Grid -->
       <div class="kana-quiz-grid" id="kanaQuizGrid"></div>
 
       <!-- Bottom Action Bar -->
@@ -98,18 +101,18 @@
         <button class="btn-restart-quiz" id="btnRestartQuiz">Restart Quiz (পুনরায় শুরু)</button>
       </div>
 
-      <!-- Results & Explanation Modal (Only shown after clicking Finish Quiz) -->
+      <!-- Results & Explanation Modal (Only after Finish Quiz) -->
       <div class="results-modal-backdrop hidden" id="quizResultsModal">
         <div class="results-modal-card">
-          <h2>Quiz Finished!</h2>
+          <h2>কুইজ সম্পন্ন হয়েছে</h2>
           <div class="modal-score-row">
             <div class="score-stat">
               <span class="stat-num" id="modalScoreText">0 / 0</span>
-              <span class="stat-sub">Answered Correctly</span>
+              <span class="stat-sub">সঠিক উত্তর</span>
             </div>
             <div class="score-stat">
               <span class="stat-num" id="modalPercentageText">0%</span>
-              <span class="stat-sub">Accuracy</span>
+              <span class="stat-sub">নির্ভুলতা</span>
             </div>
           </div>
 
@@ -120,8 +123,8 @@
           <div class="modal-weak-section" id="modalWeakList"></div>
 
           <div class="modal-actions-row">
-            <button class="btn-modal-primary" id="btnReviewBoard">বোর্ড পর্যালোচনা করুন (Review Board)</button>
-            <button class="btn-modal-secondary" id="btnRestartQuizModal" onclick="window.App.navigate('practice'); window.location.reload();">আবার চেষ্টা করুন (Try Again)</button>
+            <button class="btn-modal-primary" id="btnReviewBoard">বোর্ড পর্যালোচনা করুন</button>
+            <button class="btn-modal-secondary" id="btnRestartQuizModal" onclick="window.App.navigate('practice'); window.location.reload();">আবার চেষ্টা করুন</button>
             <button class="btn-modal-weak hidden" id="btnPracticeOnlyWeak">শুধুমাত্র ৫+ বার ভুল হওয়া বর্ণ অনুশীলন</button>
           </div>
         </div>
@@ -135,16 +138,16 @@
     <section id="view-learn" class="view-section hidden">
       <div class="learn-header-simple">
         <h2>হিন্দি বর্ণমালা রেফারেন্স গাইড</h2>
-        <p>যেকোনো বর্ণের সঠিক দেবনাগরী রূপ, বাংলা সমতুল্য, Avro উচ্চারণ ও অডিও দেখতে এখানে ক্লিক করুন।</p>
+        <p>যেকোনো বর্ণের সঠিক রূপ, বাংলা সমতুল্য, Avro উচ্চারণ ও অডিও দেখতে এখানে ক্লিক করুন।</p>
       </div>
 
       <div class="learn-subnav">
-        <button class="learn-nav-tab active" data-category="vowels">স্বরবর্ণ (Vowels)</button>
-        <button class="learn-nav-tab" data-category="consonants">ব্যঞ্জনবর্ণ (Consonants)</button>
-        <button class="learn-nav-tab" data-category="matras">মাত্রাসমূহ (Matras)</button>
-        <button class="learn-nav-tab" data-category="nukta">নুক্তা বর্ণ (Nukta)</button>
-        <button class="learn-nav-tab" data-category="conjuncts">যুক্তাক্ষর (Conjuncts)</button>
-        <button class="learn-nav-tab" data-category="words">সহজ শব্দপাঠ (Words)</button>
+        <button class="learn-nav-tab active" data-category="vowels">স্বরবর্ণ</button>
+        <button class="learn-nav-tab" data-category="consonants">ব্যঞ্জনবর্ণ</button>
+        <button class="learn-nav-tab" data-category="matras">মাত্রাসমূহ</button>
+        <button class="learn-nav-tab" data-category="nukta">নুক্তা বর্ণ</button>
+        <button class="learn-nav-tab" data-category="conjuncts">যুক্তাক্ষর</button>
+        <button class="learn-nav-tab" data-category="words">শব্দপাঠ</button>
       </div>
 
       <div id="learnCardViewer">

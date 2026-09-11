@@ -1,146 +1,402 @@
 [
   {
-    "id": "word_ghar",
+    "id": "w_film",
+    "hindi": "फ़िल्म",
+    "bengaliPhonetic": "ফিল্ম",
+    "bengali": "চলচ্চিত্র / সিনেমা",
+    "breakdown": "फ़্ + ি + ল্ + ম = फ़िल्म",
+    "avro": "film"
+  },
+  {
+    "id": "w_ghar",
     "hindi": "घर",
-    "bengali": "ঘর / বাড়ি",
-    "english": "House / Home",
-    "breakdown": "घ (gha) + र (ra) = घर",
     "bengaliPhonetic": "ঘর",
+    "bengali": "বাসা / বাড়ি",
+    "breakdown": "घ + र = घर",
     "avro": "ghar"
   },
   {
-    "id": "word_jal",
+    "id": "w_jal",
     "hindi": "जल",
-    "bengali": "জল / পানি",
-    "english": "Water",
-    "breakdown": "ज (ja) + ल (la) = जल",
     "bengaliPhonetic": "জল",
+    "bengali": "পানি / জল",
+    "breakdown": "ज + ल = जल",
     "avro": "jal"
   },
   {
-    "id": "word_phal",
+    "id": "w_phal",
     "hindi": "फल",
-    "bengali": "ফল",
-    "english": "Fruit",
-    "breakdown": "फ (pha) + ल (la) = फल",
     "bengaliPhonetic": "ফল",
+    "bengali": "ফলমূল",
+    "breakdown": "फ + ल = फल",
     "avro": "phal"
   },
   {
-    "id": "word_nal",
+    "id": "w_nal",
     "hindi": "नल",
-    "bengali": "পানির কল / নল",
-    "english": "Water tap",
-    "breakdown": "न (na) + ल (la) = नल",
     "bengaliPhonetic": "নল",
+    "bengali": "পানির কল",
+    "breakdown": "न + ल = नल",
     "avro": "nal"
   },
   {
-    "id": "word_sach",
+    "id": "w_sach",
     "hindi": "सच",
-    "bengali": "সত্য / সত্যি",
-    "english": "Truth",
-    "breakdown": "स (sa) + च (cha) = सच",
     "bengaliPhonetic": "সচ",
+    "bengali": "সত্য / সত্যি",
+    "breakdown": "स + च = सच",
     "avro": "sach"
   },
   {
-    "id": "word_man",
+    "id": "w_man",
     "hindi": "मन",
-    "bengali": "মন / হৃদয়",
-    "english": "Mind / Heart",
-    "breakdown": "म (ma) + न (na) = मन",
     "bengaliPhonetic": "মন",
+    "bengali": "হৃদয় / মন",
+    "breakdown": "म + न = मन",
     "avro": "man"
   },
   {
-    "id": "word_aam",
+    "id": "w_bas",
+    "hindi": "बस",
+    "bengaliPhonetic": "বস",
+    "bengali": "যথেষ্ট / বাসগাড়ি",
+    "breakdown": "ब + स = बस",
+    "avro": "bas"
+  },
+  {
+    "id": "w_kal",
+    "hindi": "कल",
+    "bengaliPhonetic": "কল",
+    "bengali": "আগামীকাল / গতকাল",
+    "breakdown": "क + ल = कल",
+    "avro": "kal"
+  },
+  {
+    "id": "w_dhan",
+    "hindi": "धन",
+    "bengaliPhonetic": "ধন",
+    "bengali": "সম্পদ / টাকা-পয়সা",
+    "breakdown": "ध + न = धन",
+    "avro": "dhan"
+  },
+  {
+    "id": "w_van",
+    "hindi": "वन",
+    "bengaliPhonetic": "ভন / ওয়ান",
+    "bengali": "অরণ্য / জঙ্গল",
+    "breakdown": "व + न = वन",
+    "avro": "van"
+  },
+  {
+    "id": "w_khat",
+    "hindi": "ख़त",
+    "bengaliPhonetic": "খত",
+    "bengali": "চিঠি / পত্র",
+    "breakdown": "ख़ + त = ख़त",
+    "avro": "khat"
+  },
+  {
+    "id": "w_kamal",
+    "hindi": "कमल",
+    "bengaliPhonetic": "কমল",
+    "bengali": "পদ্মফুল",
+    "breakdown": "क + म + ल = कमल",
+    "avro": "kamal"
+  },
+  {
+    "id": "w_sadak",
+    "hindi": "सड़क",
+    "bengaliPhonetic": "সড়ক",
+    "bengali": "রাস্তা / পথ",
+    "breakdown": "स + ड़ + क = सड़क",
+    "avro": "sadak"
+  },
+  {
+    "id": "w_kalam",
+    "hindi": "कलम",
+    "bengaliPhonetic": "কলম",
+    "bengali": "লেখার কলম",
+    "breakdown": "क + ल + म = कलम",
+    "avro": "kalam"
+  },
+  {
+    "id": "w_shahar",
+    "hindi": "शहर",
+    "bengaliPhonetic": "শহর",
+    "bengali": "নগর / শহর",
+    "breakdown": "श + ह + र = शहर",
+    "avro": "shahar"
+  },
+  {
+    "id": "w_khabar",
+    "hindi": "ख़बर",
+    "bengaliPhonetic": "খবর",
+    "bengali": "সংবাদ / বার্তা",
+    "breakdown": "ख़ + ब + र = ख़बर",
+    "avro": "khabar"
+  },
+  {
+    "id": "w_garam",
+    "hindi": "गरम",
+    "bengaliPhonetic": "গরম",
+    "bengali": "উষ্ণ / তপ্ত",
+    "breakdown": "ग + र + म = गरम",
+    "avro": "garam"
+  },
+  {
+    "id": "w_aam",
     "hindi": "आम",
-    "bengali": "আম",
-    "english": "Mango",
-    "breakdown": "आ (aa) + म (ma) = आम",
     "bengaliPhonetic": "আম",
+    "bengali": "সুস্বাদু ফল",
+    "breakdown": "आ + म = आम",
     "avro": "aam"
   },
   {
-    "id": "word_kaam",
+    "id": "w_kaam",
     "hindi": "काम",
-    "bengali": "কাজ / কর্ম",
-    "english": "Work",
-    "breakdown": "क (ka) + ा (aa) + म (ma) = काम",
     "bengaliPhonetic": "কাম",
+    "bengali": "কাজকর্ম / কর্ম",
+    "breakdown": "क + ा + म = काम",
     "avro": "kaam"
   },
   {
-    "id": "word_kitab",
-    "hindi": "किताब",
-    "bengali": "বই / কিতাব",
-    "english": "Book",
-    "breakdown": "क + ि (ki) + त + ा (taa) + ब (ba) = किताब",
-    "bengaliPhonetic": "কিতাব",
-    "avro": "kitab"
-  },
-  {
-    "id": "word_paani",
-    "hindi": "पानी",
-    "bengali": "পানি / জল",
-    "english": "Water",
-    "breakdown": "प + ा (paa) + न + ी (nee) = पानी",
-    "bengaliPhonetic": "পানি",
-    "avro": "paani"
-  },
-  {
-    "id": "word_doodh",
-    "hindi": "दूध",
-    "bengali": "দুধ",
-    "english": "Milk",
-    "breakdown": "द + ू (doo) + ध (dha) = दूध",
-    "bengaliPhonetic": "দুধ",
-    "avro": "doodh"
-  },
-  {
-    "id": "word_kela",
-    "hindi": "केला",
-    "bengali": "কলা",
-    "english": "Banana",
-    "breakdown": "क + े (ke) + ल + ा (laa) = केला",
-    "bengaliPhonetic": "কেলা",
-    "avro": "kela"
-  },
-  {
-    "id": "word_roti",
-    "hindi": "रोटी",
-    "bengali": "রুটি",
-    "english": "Bread / Roti",
-    "breakdown": "र + ो (ro) + ट + ी (tee) = रोटी",
-    "bengaliPhonetic": "রোটি",
-    "avro": "roti"
-  },
-  {
-    "id": "word_chaai",
-    "hindi": "चाय",
-    "bengali": "চা",
-    "english": "Tea",
-    "breakdown": "च + ा (chaa) + य (ya) = चाय",
-    "bengaliPhonetic": "চায়",
-    "avro": "chaai"
-  },
-  {
-    "id": "word_naam",
+    "id": "w_naam",
     "hindi": "नाम",
-    "bengali": "নাম",
-    "english": "Name",
-    "breakdown": "न + ा (naa) + म (ma) = नाम",
     "bengaliPhonetic": "নাম",
+    "bengali": "নাম / পরিচয়",
+    "breakdown": "न + ा + म = नाम",
     "avro": "naam"
   },
   {
-    "id": "word_bharat",
+    "id": "w_kaan",
+    "hindi": "कान",
+    "bengaliPhonetic": "কান",
+    "bengali": "শ্রবণেন্দ্রিয় / কান",
+    "breakdown": "क + ा + न = कान",
+    "avro": "kaan"
+  },
+  {
+    "id": "w_raat",
+    "hindi": "रात",
+    "bengaliPhonetic": "রাত",
+    "bengali": "রাত্রি",
+    "breakdown": "र + ा + त = रात",
+    "avro": "raat"
+  },
+  {
+    "id": "w_haath",
+    "hindi": "हाथ",
+    "bengaliPhonetic": "হাথ",
+    "bengali": "হাত / হস্ত",
+    "breakdown": "ह + ा + थ = हाथ",
+    "avro": "haath"
+  },
+  {
+    "id": "w_baat",
+    "hindi": "बात",
+    "bengaliPhonetic": "বাত",
+    "bengali": "কথা / বার্তা",
+    "breakdown": "ब + ा + त = बात",
+    "avro": "baat"
+  },
+  {
+    "id": "w_laal",
+    "hindi": "लाल",
+    "bengaliPhonetic": "লাল",
+    "bengali": "রক্তিম বর্ণ / লাল রঙ",
+    "breakdown": "ल + ा + ल = लाल",
+    "avro": "laal"
+  },
+  {
+    "id": "w_kitab",
+    "hindi": "किताब",
+    "bengaliPhonetic": "কিতাব",
+    "bengali": "পুস্তক / বই",
+    "breakdown": "क + ि + त + ा + ब = किताब",
+    "avro": "kitab"
+  },
+  {
+    "id": "w_paani",
+    "hindi": "पानी",
+    "bengaliPhonetic": "পানি",
+    "bengali": "জল / পানি",
+    "breakdown": "प + ा + न + ी = पानी",
+    "avro": "paani"
+  },
+  {
+    "id": "w_din",
+    "hindi": "दिन",
+    "bengaliPhonetic": "দিন",
+    "bengali": "দিবস / দিন",
+    "breakdown": "द + ि + न = दिन",
+    "avro": "din"
+  },
+  {
+    "id": "w_dil",
+    "hindi": "दिल",
+    "bengaliPhonetic": "দিল",
+    "bengali": "অন্তর / হৃদয়",
+    "breakdown": "द + ि + ल = दिल",
+    "avro": "dil"
+  },
+  {
+    "id": "w_geet",
+    "hindi": "गीत",
+    "bengaliPhonetic": "গীত",
+    "bengali": "গান / সঙ্গীত",
+    "breakdown": "ग + ी + त = गीत",
+    "avro": "geet"
+  },
+  {
+    "id": "w_teer",
+    "hindi": "तीर",
+    "bengaliPhonetic": "তীর",
+    "bengali": "বাণ / তীর",
+    "breakdown": "त + ी + र = तीर",
+    "avro": "teer"
+  },
+  {
+    "id": "w_nadi",
+    "hindi": "नदी",
+    "bengaliPhonetic": "নদী",
+    "bengali": "নদী / গাঙ",
+    "breakdown": "न + द + ी = नदी",
+    "avro": "nadi"
+  },
+  {
+    "id": "w_haathi",
+    "hindi": "हाथी",
+    "bengaliPhonetic": "হাথি",
+    "bengali": "হাতি / গজ",
+    "breakdown": "ह + ा + थ + ी = हाथी",
+    "avro": "haathi"
+  },
+  {
+    "id": "w_doodh",
+    "hindi": "दूध",
+    "bengaliPhonetic": "দুধ",
+    "bengali": "দুধ / ক্ষীর",
+    "breakdown": "द + ू + ध = दूध",
+    "avro": "doodh"
+  },
+  {
+    "id": "w_phool",
+    "hindi": "फूल",
+    "bengaliPhonetic": "ফুল",
+    "bengali": "পুষ্প / ফুল",
+    "breakdown": "फ + ू + ल = फूल",
+    "avro": "phool"
+  },
+  {
+    "id": "w_pul",
+    "hindi": "पुल",
+    "bengaliPhonetic": "পুল",
+    "bengali": "সেতু / সাঁকো",
+    "breakdown": "प + ु + ल = पुल",
+    "avro": "pul"
+  },
+  {
+    "id": "w_sukh",
+    "hindi": "सुख",
+    "bengaliPhonetic": "সুখ",
+    "bengali": "শান্তি / আনন্দ",
+    "breakdown": "स + ु + ख = सुख",
+    "avro": "sukh"
+  },
+  {
+    "id": "w_mukh",
+    "hindi": "मुख",
+    "bengaliPhonetic": "মুখ",
+    "bengali": "চেহারা / মুখমণ্ডল",
+    "breakdown": "म + ु + ख = मुख",
+    "avro": "mukh"
+  },
+  {
+    "id": "w_roop",
+    "hindi": "रूप",
+    "bengaliPhonetic": "রূপ",
+    "bengali": "সৌন্দর্য / চেহারা",
+    "breakdown": "र + ू + प = रूप",
+    "avro": "roop"
+  },
+  {
+    "id": "w_kela",
+    "hindi": "केला",
+    "bengaliPhonetic": "কেলা",
+    "bengali": "কলা ফল",
+    "breakdown": "क + े + ल + ा = केला",
+    "avro": "kela"
+  },
+  {
+    "id": "w_seb",
+    "hindi": "सेब",
+    "bengaliPhonetic": "সেব",
+    "bengali": "আপেল",
+    "breakdown": "स + े + ब = सेब",
+    "avro": "seb"
+  },
+  {
+    "id": "w_tel",
+    "hindi": "तेल",
+    "bengaliPhonetic": "তেল",
+    "bengali": "তৈল",
+    "breakdown": "त + े + ल = तेल",
+    "avro": "tel"
+  },
+  {
+    "id": "w_roti",
+    "hindi": "रोटी",
+    "bengaliPhonetic": "রোটি",
+    "bengali": "রুটি",
+    "breakdown": "र + ो + ट + ी = रोटी",
+    "avro": "roti"
+  },
+  {
+    "id": "w_chhaai",
+    "hindi": "चाय",
+    "bengaliPhonetic": "চায়",
+    "bengali": "চা পানীয়",
+    "breakdown": "च + ा + य = चाय",
+    "avro": "chaai"
+  },
+  {
+    "id": "w_bharat",
     "hindi": "भारत",
-    "bengali": "ভারত",
-    "english": "India",
-    "breakdown": "भ + ा (bhaa) + र (ra) + त (ta) = भारत",
     "bengaliPhonetic": "ভারত",
+    "bengali": "আমাদের প্রতিবেশী দেশ",
+    "breakdown": "भ + ा + र + त = भारत",
     "avro": "bharat"
+  },
+  {
+    "id": "w_mitra",
+    "hindi": "मित्र",
+    "bengaliPhonetic": "মিত্র",
+    "bengali": "বন্ধু / সখা",
+    "breakdown": "म + ि + त্ + র = मित्र",
+    "avro": "mitra"
+  },
+  {
+    "id": "w_patra",
+    "hindi": "पत्र",
+    "bengaliPhonetic": "পত্র",
+    "bengali": "চিঠি / দলিল",
+    "breakdown": "प + ত্ + র = पत्र",
+    "avro": "patra"
+  },
+  {
+    "id": "w_vidya",
+    "hindi": "विद्या",
+    "bengaliPhonetic": "বিদ্যা",
+    "bengali": "জ্ঞান / শিক্ষা",
+    "breakdown": "व + ि + দ্ + য + ा = विद्या",
+    "avro": "vidya"
+  },
+  {
+    "id": "w_shanti",
+    "hindi": "शांति",
+    "bengaliPhonetic": "শান্তি",
+    "bengali": "স্থিরতা / শান্তি",
+    "breakdown": "श + ा + ं + ত + ি = शांति",
+    "avro": "shanti"
   }
 ]
