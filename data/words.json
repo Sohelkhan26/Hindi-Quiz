@@ -1,0 +1,146 @@
+[
+  {
+    "id": "word_ghar",
+    "hindi": "घर",
+    "bengali": "ঘর / বাড়ি",
+    "english": "House / Home",
+    "breakdown": "घ (gha) + र (ra) = घर",
+    "bengaliPhonetic": "ঘর",
+    "avro": "ghar"
+  },
+  {
+    "id": "word_jal",
+    "hindi": "जल",
+    "bengali": "জল / পানি",
+    "english": "Water",
+    "breakdown": "ज (ja) + ल (la) = जल",
+    "bengaliPhonetic": "জল",
+    "avro": "jal"
+  },
+  {
+    "id": "word_phal",
+    "hindi": "फल",
+    "bengali": "ফল",
+    "english": "Fruit",
+    "breakdown": "फ (pha) + ल (la) = फल",
+    "bengaliPhonetic": "ফল",
+    "avro": "phal"
+  },
+  {
+    "id": "word_nal",
+    "hindi": "नल",
+    "bengali": "পানির কল / নল",
+    "english": "Water tap",
+    "breakdown": "न (na) + ल (la) = नल",
+    "bengaliPhonetic": "নল",
+    "avro": "nal"
+  },
+  {
+    "id": "word_sach",
+    "hindi": "सच",
+    "bengali": "সত্য / সত্যি",
+    "english": "Truth",
+    "breakdown": "स (sa) + च (cha) = सच",
+    "bengaliPhonetic": "সচ",
+    "avro": "sach"
+  },
+  {
+    "id": "word_man",
+    "hindi": "मन",
+    "bengali": "মন / হৃদয়",
+    "english": "Mind / Heart",
+    "breakdown": "म (ma) + न (na) = मन",
+    "bengaliPhonetic": "মন",
+    "avro": "man"
+  },
+  {
+    "id": "word_aam",
+    "hindi": "आम",
+    "bengali": "আম",
+    "english": "Mango",
+    "breakdown": "आ (aa) + म (ma) = आम",
+    "bengaliPhonetic": "আম",
+    "avro": "aam"
+  },
+  {
+    "id": "word_kaam",
+    "hindi": "काम",
+    "bengali": "কাজ / কর্ম",
+    "english": "Work",
+    "breakdown": "क (ka) + ा (aa) + म (ma) = काम",
+    "bengaliPhonetic": "কাম",
+    "avro": "kaam"
+  },
+  {
+    "id": "word_kitab",
+    "hindi": "किताब",
+    "bengali": "বই / কিতাব",
+    "english": "Book",
+    "breakdown": "क + ि (ki) + त + ा (taa) + ब (ba) = किताब",
+    "bengaliPhonetic": "কিতাব",
+    "avro": "kitab"
+  },
+  {
+    "id": "word_paani",
+    "hindi": "पानी",
+    "bengali": "পানি / জল",
+    "english": "Water",
+    "breakdown": "प + ा (paa) + न + ी (nee) = पानी",
+    "bengaliPhonetic": "পানি",
+    "avro": "paani"
+  },
+  {
+    "id": "word_doodh",
+    "hindi": "दूध",
+    "bengali": "দুধ",
+    "english": "Milk",
+    "breakdown": "द + ू (doo) + ध (dha) = दूध",
+    "bengaliPhonetic": "দুধ",
+    "avro": "doodh"
+  },
+  {
+    "id": "word_kela",
+    "hindi": "केला",
+    "bengali": "কলা",
+    "english": "Banana",
+    "breakdown": "क + े (ke) + ल + ा (laa) = केला",
+    "bengaliPhonetic": "কেলা",
+    "avro": "kela"
+  },
+  {
+    "id": "word_roti",
+    "hindi": "रोटी",
+    "bengali": "রুটি",
+    "english": "Bread / Roti",
+    "breakdown": "र + ो (ro) + ट + ी (tee) = रोटी",
+    "bengaliPhonetic": "রোটি",
+    "avro": "roti"
+  },
+  {
+    "id": "word_chaai",
+    "hindi": "चाय",
+    "bengali": "চা",
+    "english": "Tea",
+    "breakdown": "च + ा (chaa) + य (ya) = चाय",
+    "bengaliPhonetic": "চায়",
+    "avro": "chaai"
+  },
+  {
+    "id": "word_naam",
+    "hindi": "नाम",
+    "bengali": "নাম",
+    "english": "Name",
+    "breakdown": "न + ा (naa) + म (ma) = नाम",
+    "bengaliPhonetic": "নাম",
+    "avro": "naam"
+  },
+  {
+    "id": "word_bharat",
+    "hindi": "भारत",
+    "bengali": "ভারত",
+    "english": "India",
+    "breakdown": "भ + ा (bhaa) + र (ra) + त (ta) = भारत",
+    "bengaliPhonetic": "ভারত",
+    "avro": "bharat"
+  }
+]

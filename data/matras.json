@@ -1,0 +1,177 @@
+{
+  "description": "হিন্দিতে মাত্রাকে স্বরচিহ্ন বলা হয়, যা হুবহু বাংলায় কারচিহ্ন (আ-কার, ই-কার ইত্যাদি)-এর মতো কাজ করে।",
+  "matras": [
+    {
+      "id": "matra_aa",
+      "nameHindi": "आ की मात्रा",
+      "nameBangla": "আ-কার (া)",
+      "symbol": "ा",
+      "bengaliKar": "া",
+      "sound": "aa",
+      "avro": ["aa", "a"],
+      "devanagariExample": "का",
+      "bengaliExample": "কা",
+      "explanation": "অক্ষরের ডানে একটি সোজা খাড়া দাগ বসে। হুবহু বাংলা 'া' (আ-কার)-এর মতো। যেমন: काम (কাজ)।"
+    },
+    {
+      "id": "matra_i",
+      "nameHindi": "इ की मात्रा (छोटी ई)",
+      "nameBangla": "হ্রস্ব ই-কার (ি)",
+      "symbol": "ि",
+      "bengaliKar": "ি",
+      "sound": "i",
+      "avro": ["i"],
+      "devanagariExample": "कि",
+      "bengaliExample": "কি",
+      "explanation": "অক্ষরের বামপাশে একটি খাড়া দাগ ও ওপর দিয়ে মাথার ওপর অর্ধবৃত্ত। বাংলা হ্রস্ব ই-কারের (ি) মতো। যেমন: किताब (বই)।"
+    },
+    {
+      "id": "matra_ii",
+      "nameHindi": "ई की मात्रा (बड़ी ई)",
+      "nameBangla": "দীর্ঘ ঈ-কার (ী)",
+      "symbol": "ी",
+      "bengaliKar": "ী",
+      "sound": "ee / ii",
+      "avro": ["ee", "ii", "I"],
+      "devanagariExample": "की",
+      "bengaliExample": "কী",
+      "explanation": "অক্ষরের ডানপাশে বসে মাথার ওপর দিয়ে যুক্ত হয়। বাংলা দীর্ঘ ঈ-কারের (ী) মতো। যেমন: कील (পেরেক)।"
+    },
+    {
+      "id": "matra_u",
+      "nameHindi": "उ की मात्रा (छोटा उ)",
+      "nameBangla": "হ্রস্ব উ-কার (ু)",
+      "symbol": "ु",
+      "bengaliKar": "ু",
+      "sound": "u",
+      "avro": ["u"],
+      "devanagariExample": "कु",
+      "bengaliExample": "কু",
+      "explanation": "বর্ণের নিচে বসে বাঁদিকে ঘোরানো ছোট্ট প্যাঁচ। বাংলা হ্রস্ব উ-কার (ু)-এর মতো। যেমন: कुछ (কিছু)।"
+    },
+    {
+      "id": "matra_uu",
+      "nameHindi": "ऊ की मात्रा (बड़ा ऊ)",
+      "nameBangla": "দীর্ঘ ঊ-কার (ূ)",
+      "symbol": "ू",
+      "bengaliKar": "ূ",
+      "sound": "oo / uu",
+      "avro": ["oo", "uu", "U"],
+      "devanagariExample": "कू",
+      "bengaliExample": "কূ",
+      "explanation": "বর্ণের নিচে বসে ডানদিকে ঝুলন্ত প্যাঁচ। বাংলা দীর্ঘ ঊ-কার (ূ)-এর মতো। যেমন: कूप (কূপ/কুয়া)।"
+    },
+    {
+      "id": "matra_ri",
+      "nameHindi": "ऋ की मात्रा",
+      "nameBangla": "ঋ-কার (ৃ)",
+      "symbol": "ृ",
+      "bengaliKar": "ৃ",
+      "sound": "ri",
+      "avro": ["ri", "rri"],
+      "devanagariExample": "कृ",
+      "bengaliExample": "কৃ",
+      "explanation": "বর্ণের নিচে ছোট ইংরেজি 'c'-এর মতো অর্ধবৃত্ত। বাংলা ঋ-কার (ৃ)-এর সমতুল্য। যেমন: कृपा (কৃপা/দয়া)।"
+    },
+    {
+      "id": "matra_e",
+      "nameHindi": "ए की मात्रा",
+      "nameBangla": "এ-কার (ে)",
+      "symbol": "े",
+      "bengaliKar": "ে",
+      "sound": "e",
+      "avro": ["e"],
+      "devanagariExample": "के",
+      "bengaliExample": "কে",
+      "explanation": "বাংলায় এ-কার বর্ণের বামে বসে (যেমন: কে), কিন্তু হিন্দিতে এটি মাত্রার ওপরে একটি তির্যক শিখা হিসেবে বসে! যেমন: केला (কলা)।"
+    },
+    {
+      "id": "matra_ai",
+      "nameHindi": "ऐ की मात्रा",
+      "nameBangla": "ঐ-কার (ৈ)",
+      "symbol": "ै",
+      "bengaliKar": "ৈ",
+      "sound": "ai / oi",
+      "avro": ["ai", "oi"],
+      "devanagariExample": "कै",
+      "bengaliExample": "কৈ",
+      "explanation": "মাত্রার ওপরে দুটি তির্যক শিখা। হিন্দিতে উচ্চারণ 'অ্যায়' এর মতো হয়। যেমন: कैसा (কেমন)।"
+    },
+    {
+      "id": "matra_o",
+      "nameHindi": "ओ की मात्रा",
+      "nameBangla": "ও-কার (ো)",
+      "symbol": "ो",
+      "bengaliKar": "ো",
+      "sound": "o",
+      "avro": ["o"],
+      "devanagariExample": "को",
+      "bengaliExample": "কো",
+      "explanation": "ডানে একটি খাড়া দাগ এবং তার ওপর একটি তির্যক শিখা (ा + े)। বাংলা ও-কার (ো)-এর সমান। যেমন: कोयल (কোকিল)।"
+    },
+    {
+      "id": "matra_au",
+      "nameHindi": "औ की मात्रा",
+      "nameBangla": "ঔ-কার (ৌ)",
+      "symbol": "ौ",
+      "bengaliKar": "ৌ",
+      "sound": "au / ou",
+      "avro": ["au", "ou"],
+      "devanagariExample": "कौ",
+      "bengaliExample": "কৌ",
+      "explanation": "ডানে একটি খাড়া দাগ এবং ওপর দুটি তির্যক শিখা (ा + ै)। বাংলা ঔ-কার (ৌ)-এর সমান। যেমন: कौआ (কাক)।"
+    },
+    {
+      "id": "matra_anusvara",
+      "nameHindi": "अनुस्वार (अं)",
+      "nameBangla": "অনুস্বার (ং)",
+      "symbol": "ं",
+      "bengaliKar": "ং",
+      "sound": "am / an",
+      "avro": ["an", "am", "ng"],
+      "devanagariExample": "कं",
+      "bengaliExample": "কং",
+      "explanation": "মাত্রার ওপরে একটি নাসিক্য বিন্দু। বাংলার অনুস্বার (ং)-এর অনুরূপ। যেমন: कंगन (কঙ্কণ/চুড়ি)।"
+    },
+    {
+      "id": "matra_chandrabindu",
+      "nameHindi": "अनुनासिक (चन्द्रबिन्दु)",
+      "nameBangla": "চন্দ্রবিন্দু (ঁ)",
+      "symbol": "ँ",
+      "bengaliKar": "ঁ",
+      "sound": "nasalization",
+      "avro": ["^", "n"],
+      "devanagariExample": "काँ",
+      "bengaliExample": "কাঁ",
+      "explanation": "অর্ধচন্দ্র ও বিন্দু। স্বরধ্বনিকে অনুনাসিক বা নাক দিয়ে উচ্চারণ করার জন্য ব্যবহৃত হয়। যেমন: चाँद (চাঁদ)।"
+    },
+    {
+      "id": "matra_halant",
+      "nameHindi": "हलन्त",
+      "nameBangla": "হসন্ত (্)",
+      "symbol": "्",
+      "bengaliKar": "্",
+      "sound": "mute vowel",
+      "avro": ["`"],
+      "devanagariExample": "क्",
+      "bengaliExample": "ক্",
+      "explanation": "বর্ণের নিচের ছোট হেলানো দাগ যা অন্তর্নিহিত স্বর 'অ' কে দূর করে খাঁটি ব্যঞ্জন তৈরি করে। যেমন: क् = ক্।"
+    }
+  ],
+  "specialRuleRa": {
+    "title": "বিশেষ ব্যতিক্রম: 'র' (र)-এর সাথে উ/ঊ-কার!",
+    "explanation": "সাধারণত উ-কার বর্ণের নিচে বসে, কিন্তু 'र' (র)-এর ক্ষেত্রে এটি নিচে না বসে অক্ষরের পেটের মাঝখানে বসে!",
+    "examples": [
+      {
+        "devanagari": "र + ु = रु",
+        "bengali": "র + ু = রু",
+        "word": "रुपया (রুপি/টাকা)"
+      },
+      {
+        "devanagari": "र + ू = रू",
+        "bengali": "র + ূ = রূপ",
+        "word": "रूप (রূপ/চেহারা)"
+      }
+    ]
+  }
+}

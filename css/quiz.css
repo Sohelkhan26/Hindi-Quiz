@@ -1,0 +1,507 @@
+/* ==========================================================================
+   TOFUGU-STYLE KANA QUIZ LAYOUT FOR HINDI ALPHABET
+   Full-screen responsive card grid with Avro/Bangla inputs
+   ========================================================================== */
+
+/* Intro Box & Instructions */
+.tofugu-intro-box {
+  max-width: 800px;
+  margin: 0 auto 1.75rem;
+  text-align: center;
+}
+
+.tofugu-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1d78b9;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+html.dark .tofugu-title {
+  color: #38bdf8;
+}
+
+.tofugu-instructions {
+  list-style: none;
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto 1.5rem;
+  padding: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.tofugu-instructions li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.tofugu-instructions li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1d78b9;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+html.dark .tofugu-instructions li::before {
+  color: #38bdf8;
+}
+
+.tofugu-instructions code {
+  background: var(--bg-elevated);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* Controls Bar: Category & Mode Toggles */
+.quiz-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-group,
+.mode-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.ctrl-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-right: 0.2rem;
+}
+
+.quiz-filter-tab,
+.mode-toggle-btn {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.quiz-filter-tab:hover,
+.mode-toggle-btn:hover {
+  border-color: #1d78b9;
+}
+
+.quiz-filter-tab.active,
+.mode-toggle-btn.active {
+  background: #1d78b9;
+  color: #ffffff;
+  border-color: #1d78b9;
+}
+
+.score-tracker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--bg-elevated);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.tracker-val {
+  color: #1d78b9;
+}
+
+html.dark .tracker-val {
+  color: #38bdf8;
+}
+
+/* ==========================================================================
+   Full-Screen Responsive Grid (Like Tofugu Kana Quiz)
+   8 Columns on Wide Desktop
+   ========================================================================== */
+.kana-quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1.15rem;
+  width: 100%;
+  margin: 0 auto 2.5rem;
+}
+
+/* The Solid Blue Tofugu Card */
+.kana-card {
+  background: #1d78b9;
+  border-radius: 14px;
+  padding: 1.6rem 0.85rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(29, 120, 185, 0.25);
+  transition: transform 0.18s ease, background-color 0.25s ease, box-shadow 0.18s ease;
+  min-height: 180px;
+  position: relative;
+}
+
+.kana-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(29, 120, 185, 0.35);
+}
+
+.kana-glyph {
+  font-family: var(--font-devanagari);
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  user-select: none;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-input {
+  width: 100%;
+  max-width: 130px;
+  height: 42px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: var(--font-sans), var(--font-bengali);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-input::placeholder {
+  color: #94a3b8;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.card-input:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.4);
+}
+
+/* Card State: Correct */
+.kana-card.correct {
+  background: #27ae60 !important;
+  box-shadow: 0 4px 14px rgba(39, 174, 96, 0.35);
+}
+
+.card-input.solved-input {
+  background: rgba(255, 255, 255, 0.85);
+  color: #27ae60;
+  font-weight: 800;
+  cursor: default;
+}
+
+/* Card State: Incorrect Shake (DOES NOT reveal right answer!) */
+.kana-card.incorrect-shake {
+  animation: shake-card 0.4s ease;
+  border: 2px solid #ef4444;
+}
+
+/* Card State: Unsolved (Revealed after Finish Quiz) */
+.kana-card.unsolved {
+  background: #e74c3c !important;
+}
+
+.card-solution {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  width: 100%;
+  max-width: 130px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 0.6rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  animation: fade-in 0.3s ease;
+}
+
+.sol-bangla {
+  color: #e74c3c;
+  margin-right: 0.35rem;
+}
+
+.sol-avro {
+  color: #475569;
+  font-family: var(--font-sans);
+}
+
+/* Bottom Action Buttons */
+.quiz-bottom-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 2.5rem 0 4rem;
+}
+
+.btn-finish-quiz {
+  background: #1d78b9;
+  color: #ffffff;
+  border: none;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(29, 120, 185, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-finish-quiz:hover {
+  background: #166094;
+  transform: translateY(-2px);
+}
+
+.btn-restart-quiz {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-subtle);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-restart-quiz:hover {
+  background: var(--bg-elevated);
+}
+
+/* Results Modal Backdrop */
+.results-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.results-modal-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  max-width: 580px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  animation: scale-up 0.25s ease;
+}
+
+.results-modal-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-main);
+}
+
+.modal-score-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: var(--bg-elevated);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+}
+
+.score-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1d78b9;
+}
+
+html.dark .stat-num {
+  color: #38bdf8;
+}
+
+.stat-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.modal-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.modal-weak-section {
+  text-align: left;
+  margin-bottom: 1.75rem;
+}
+
+.weak-list-header {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 0.6rem;
+}
+
+.weak-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.weak-badge {
+  background: var(--danger-bg);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.no-weak-notice {
+  text-align: center;
+  color: #27ae60;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.modal-actions-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.btn-modal-primary {
+  background: #1d78b9;
+  color: #ffffff;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.btn-modal-secondary {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.btn-modal-weak {
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes shake-card {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-up {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================================================
+   Responsive Grid Breakpoints
+   ========================================================================== */
+@media (max-width: 1300px) {
+  .kana-quiz-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 980px) {
+  .kana-quiz-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .tofugu-title {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .kana-quiz-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .kana-card {
+    min-height: 160px;
+    padding: 1.25rem 0.5rem 1rem;
+  }
+  .kana-glyph {
+    font-size: 2.8rem;
+  }
+  .card-input {
+    height: 38px;
+    font-size: 1rem;
+  }
+  .quiz-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
